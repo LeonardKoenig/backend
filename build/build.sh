@@ -1,11 +1,11 @@
 #!/bin/bash -ex
 
-version_t="v16.04.1-beta"
-version_n="16.04.1"
+version_t="v16.07.0-alpha"
+version_n="16.07.0"
 
 #-----------------------------------------------------------------------------
 rem="0.4.7"
-re="0.4.15"
+re="0.4.17"
 opus="1.1.2"
 openssl="1.0.2h"
 baresip="master"
