@@ -118,6 +118,7 @@ if [ ! -d baresip-$baresip ]; then
     curl ${patch_url}...studio-link-config.patch | patch -p1
     patch -p1 < ../../build/max_calls.patch
     patch -p1 < ../../build/osx_sample_rate.patch
+    patch -p1 < ../../build/0001-fix-incomplete-type-error.patch
 
     ## Link backend modules
     cp -a ../../webapp modules/webapp
@@ -153,7 +154,11 @@ fi
 if [ "$TRAVIS_OS_NAME" == "linux" ]; then
     if [ ! -d overlay-lv2 ]; then
         git clone $github_org/overlay-lv2.git overlay-lv2
-        cd overlay-lv2; ./build.sh; cd ..
+        cd overlay-lv2
+	patch --ignore-whitespace -p1 < ../../build/0001-fix-path.patch
+	git clone http://lv2plug.in/git/cgit.cgi/lv2.git
+
+	./build.sh; cd ..
     fi
 fi
 

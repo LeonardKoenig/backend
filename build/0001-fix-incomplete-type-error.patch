@@ -1,0 +1,62 @@
+From 731a3377e2a20fe7a6ae025b55c6c8c5f7151e35 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Leonard=20K=C3=B6nig?= <leonard.r.koenig@googlemail.com>
+Date: Thu, 11 Aug 2016 23:15:37 +0200
+Subject: [PATCH] fix incomplete type error
+
+---
+ modules/alsa/alsa.c      | 4 ++--
+ modules/alsa/alsa_play.c | 4 ++--
+ modules/alsa/alsa_src.c  | 4 ++--
+ 3 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/modules/alsa/alsa.c b/modules/alsa/alsa.c
+index bed4269..041e850 100644
+--- a/modules/alsa/alsa.c
++++ b/modules/alsa/alsa.c
+@@ -3,9 +3,9 @@
+  *
+  * Copyright (C) 2010 Creytiv.com
+  */
+-#define _POSIX_SOURCE 1
++//#define _POSIX_SOURCE 1
+ #include <sys/types.h>
+-#include <sys/time.h>
++//#include <sys/time.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <alsa/asoundlib.h>
+diff --git a/modules/alsa/alsa_play.c b/modules/alsa/alsa_play.c
+index 9ca45bd..c0d00d1 100644
+--- a/modules/alsa/alsa_play.c
++++ b/modules/alsa/alsa_play.c
+@@ -3,9 +3,9 @@
+  *
+  * Copyright (C) 2010 Creytiv.com
+  */
+-#define _POSIX_SOURCE 1
++//#define _POSIX_SOURCE 1
+ #include <sys/types.h>
+-#include <sys/time.h>
++//#include <sys/time.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <alsa/asoundlib.h>
+diff --git a/modules/alsa/alsa_src.c b/modules/alsa/alsa_src.c
+index 6688f9d..2ac6754 100644
+--- a/modules/alsa/alsa_src.c
++++ b/modules/alsa/alsa_src.c
+@@ -3,9 +3,9 @@
+  *
+  * Copyright (C) 2010 Creytiv.com
+  */
+-#define _POSIX_SOURCE 1
++//#define _POSIX_SOURCE 1
+ #include <sys/types.h>
+-#include <sys/time.h>
++//#include <sys/time.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <alsa/asoundlib.h>
+-- 
+2.9.2
+

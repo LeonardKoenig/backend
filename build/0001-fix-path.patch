@@ -1,0 +1,25 @@
+From ac076b418f84c872feb904a7d95bc8d0b3e739bc Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Leonard=20K=C3=B6nig?= <leonard.r.koenig@googlemail.com>
+Date: Thu, 11 Aug 2016 23:12:12 +0200
+Subject: [PATCH] fix path
+
+---
+ studio-link.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/studio-link.c b/studio-link.c
+index 83b5f9f..4fc6b7c 100644
+--- a/studio-link.c
++++ b/studio-link.c
+@@ -5,7 +5,7 @@
+ #include <unistd.h>
+ #include <re/re.h>
+ 
+-#include "lv2/lv2plug.in/ns/lv2core/lv2.h"
++#include "lv2/lv2/lv2plug.in/ns/lv2core/lv2.h"
+ #include "baresip.h"
+ 
+ #define STUDIOLINK_URI "http://studio-link.de/plugins/lv2/studio-link"
+-- 
+2.9.2
+
